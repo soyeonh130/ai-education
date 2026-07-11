@@ -1,1 +1,3 @@
-function goMBTI(){location.href='https://www.16personalities.com/free-personality-test';}
+function goMBTI() {
+    location.href = 'https://www.career.go.kr/cnet/front/examen/inspctMain.do';
+}
