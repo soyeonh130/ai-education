@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='style.css'>
+    <style>
+        
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+        .submit-btn {
+            background: #fff;
+            color: #7c3aed;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 15px;
+        }
+        .submit-btn:hover {
+            background: #f3e8ff;
+        }
+    </style>
+</head>
+<body>
+    <div class='hero'>
+        <h1 style='font-size: 32px; margin-bottom: 10px;'>맞춤형 학습방법 추천</h1>
+        <p style='margin-bottom: 25px;'>정보를 입력하시면 AI가 가장 효율적인 학습 방식을 분석합니다.</p>
+
+        
+        <div class='input-group'>
+            <label for='intelligence'>🧠 내 다중지능 입력하기</label>
+            <input type='text' id='intelligence' placeholder='예: 언어지능, 논리수학지능'>
+        </div>
+
+        
+        <div class='input-group'>
+            <label for='wrong-answer'>📝 틀린문제 입력하기</label>
+            <textarea id='wrong-answer' placeholder='틀린 문제의 내용이나 취약한 유형을 적어주세요.'></textarea>
+        </div>
+
+        
+        <button class='btn submit-btn' onclick='alert("입력된 정보를 바탕으로 맞춤형 학습 방법을 분석하는 중입니다...")'>맞춤형 학습방법 추천받기</button>
+        
+        
+        <a class='btn' href='index.html' style='background: rgba(255,255,255,0.2); color: #fff; margin-top: 20px;'>메인으로</a>
+    </div>
+</body>
+</html>
