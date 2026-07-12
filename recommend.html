@@ -4,7 +4,6 @@
     <meta charset='utf-8'>
     <link rel='stylesheet' href='style.css'>
     <style>
-        
         .input-group {
             margin: 15px 0;
             text-align: left;
@@ -48,23 +47,39 @@
         <h1 style='font-size: 32px; margin-bottom: 10px;'>맞춤형 학습방법 추천</h1>
         <p style='margin-bottom: 25px;'>정보를 입력하시면 AI가 가장 효율적인 학습 방식을 분석합니다.</p>
 
-        
         <div class='input-group'>
             <label for='intelligence'>🧠 내 다중지능 입력하기</label>
             <input type='text' id='intelligence' placeholder='예: 언어지능, 논리수학지능'>
         </div>
 
-        
         <div class='input-group'>
             <label for='wrong-answer'>📝 틀린문제 입력하기</label>
             <textarea id='wrong-answer' placeholder='틀린 문제의 내용이나 취약한 유형을 적어주세요.'></textarea>
         </div>
 
-        
-        <button class='btn submit-btn' onclick='alert("입력된 정보를 바탕으로 맞춤형 학습 방법을 분석하는 중입니다...")'>맞춤형 학습방법 추천받기</button>
-        
+        <button class='btn submit-btn' onclick='checkAndRecommend()'>맞춤형 학습방법 추천받기</button>
         
         <a class='btn' href='index.html' style='background: rgba(255,255,255,0.2); color: #fff; margin-top: 20px;'>메인으로</a>
     </div>
+
+    <script>
+        function checkAndRecommend() {
+            // 사용자가 입력한 값 가져오기
+            var intelligenceInput = document.getElementById('intelligence').value;
+            var wrongAnswerInput = document.getElementById('wrong-answer').value;
+
+            // 조건 확인 (다중지능에 '언어' 혹은 '국어'가 포함되고, 문제에 '통합사회' 혹은 '관점'이 포함된 경우)
+            if ((intelligenceInput.includes('언어') || intelligenceInput.includes('국어')) && 
+                (wrongAnswerInput.includes('통합사회') || wrongAnswerInput.includes('관점') || wrongAnswerInput.includes('환경'))) {
+                
+                alert("조건이 확인되었습니다! AI 맞춤형 학습 추천 페이지로 이동합니다.");
+                location.href = 'result.html'; // 결과 페이지로 이동
+                
+            } else {
+                // 그 외 다른 것을 입력했을 때 예외 처리 안내
+                alert("현재는 시연 단계 프로토타입입니다.\n\n[시연 방법]\n다중지능: '언어지능'\n틀린문제: '통합사회 관점 문제'\n형태로 핵심 단어가 포함되게 입력해 주세요!");
+            }
+        }
+    </script>
 </body>
 </html>
